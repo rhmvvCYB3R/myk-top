@@ -35,7 +35,7 @@ export default function Navbar() {
               onClick={toggleMobileMenu}
               type="button"
             >
-              <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 right-1/2">
+              <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-8 h-8"
@@ -55,8 +55,8 @@ export default function Navbar() {
 
           {/* Mobile Menu (po lewej stronie) */}
           <div
-            className={`fixed top-0 right-0 min-h-screen w-64 bg-slate-100 shadow-lg transition-transform duration-300 ease-in-out z-50 ${
-              isMobileMenuOpen ? "translate-x-full" : "-translate-x-0"
+            className={`fixed top-0 left-0 min-h-screen w-64 bg-slate-100 shadow-lg transition-transform duration-300 ease-in-out z-50 ${
+              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } lg:hidden`}
           >
             <div className="flex flex-row items-center border-b pb-4">

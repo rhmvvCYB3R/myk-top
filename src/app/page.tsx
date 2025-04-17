@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Navbar from './components/Navbar';
 
@@ -14,11 +14,11 @@ export default function HomePage() {
         }}
       >
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center p-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg fade-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg fade-up">
             Witamy w MYK Restauracja 🍽️
           </h1>
 
-          <p className="mb-8 max-w-2xl text-lg md:text-xl drop-shadow-md fade-up motion-safe:delay-[0.3s]">
+          <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl drop-shadow-md fade-up motion-safe:delay-[0.3s]">
             Odkryj wykwintne dania, przytulną atmosferę i wyjątkową obsługę. Zarezerwuj stolik lub zamów dostawę już teraz.
           </p>
 
@@ -45,12 +45,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-16 bg-white text-center fade-up motion-safe:delay-[0.2s]">
-        <h2 className="text-4xl font-bold mb-8 text-gray-800">
+      <section className="py-20 px-6 sm:px-12 md:px-16 bg-white text-center fade-up motion-safe:delay-[0.2s]">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800">
           Dlaczego nas wybierają?
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
           {[
             {
               title: 'Wysoka jakość',
@@ -72,8 +72,8 @@ export default function HomePage() {
               key={idx}
               className={`bg-gray-100 p-6 rounded-2xl shadow hover:shadow-xl transition transform hover:scale-105 scale-in motion-safe:delay-[${0.2 * idx}s]`}
             >
-              <div className="text-5xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <div className="text-4xl sm:text-5xl mb-4">{item.icon}</div>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{item.title}</h3>
               <p className="text-gray-600">{item.text}</p>
             </div>
           ))}
