@@ -10,7 +10,7 @@ export default function Navbar() {
 
   // Tablica elementów nawigacyjnych (po polsku) z добавлением смайликов
   const navItems = [
-    { name: "Menu 😊", href: "/menu" },
+    { name: "Menu 😊", href: "/" },
     { name: "Koszyk 🛒", href: "/about" },
     { name: "Zamów 🍽️", href: "/about" },
     { name: "Opinie 💬", href: "/news" },
