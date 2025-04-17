@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 
 export default function HomePage() {
@@ -8,37 +7,31 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
       <Navbar />
 
-      <motion.section
+      <section
         className="relative h-screen bg-cover bg-center pt-20"
-        style={{ backgroundImage: "url('/restaurant-bg.jpg')" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        style={{
+          backgroundImage: "url('/restaurant-bg.jpg')",
+          animation: 'fadeIn 1.2s ease-out forwards',
+        }}
       >
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center p-4">
-          <motion.h1
+          <h1
             className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            style={{ animation: 'fadeUp 0.8s ease-out forwards' }}
           >
             Witamy w MYK Restauracja 🍽️
-          </motion.h1>
+          </h1>
 
-          <motion.p
+          <p
             className="mb-8 max-w-2xl text-lg md:text-xl drop-shadow-md"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            style={{ animation: 'fadeUp 0.7s ease-out forwards', animationDelay: '0.3s' }}
           >
             Odkryj wykwintne dania, przytulną atmosferę i wyjątkową obsługę. Zarezerwuj stolik lub zamów dostawę już teraz.
-          </motion.p>
+          </p>
 
-          <motion.div
+          <div
             className="space-x-2 sm:space-x-4 flex flex-wrap justify-center"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            style={{ animation: 'scaleIn 0.6s ease-out forwards', animationDelay: '0.6s' }}
           >
             <a
               href="/menu"
@@ -58,18 +51,18 @@ export default function HomePage() {
             >
               Zamów
             </a>
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
+      <section
         className="py-20 px-6 md:px-16 bg-white text-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        style={{ animation: 'fadeUp 0.8s ease-out forwards' }}
       >
-        <h2 className="text-4xl font-bold mb-8 text-gray-800">Dlaczego nas wybierają?</h2>
+        <h2 className="text-4xl font-bold mb-8 text-gray-800">
+          Dlaczego nas wybierają?
+        </h2>
+
         <div className="grid md:grid-cols-3 gap-10">
           {[
             {
@@ -88,18 +81,21 @@ export default function HomePage() {
               text: 'Ciesz się muzyką na żywo i niepowtarzalną atmosferą każdego wieczoru.'
             }
           ].map((item, idx) => (
-            <motion.div
+            <div
               key={idx}
-              className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-xl transition"
-              whileHover={{ scale: 1.05 }}
+              className="bg-gray-100 p-6 rounded-2xl shadow hover:shadow-xl transition transform hover:scale-105"
+              style={{
+                animation: `scaleIn 0.6s ease-out forwards`,
+                animationDelay: `${0.2 * idx}s`,
+              }}
             >
               <div className="text-5xl mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
               <p className="text-gray-600">{item.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }
