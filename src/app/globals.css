@@ -24,33 +24,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-  100% {
-    opacity: 1;
-  }
-}
 
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes scaleIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .fade-in {
+    @apply motion-safe:animate-[fadeIn_1.2s_ease-out_forwards];
+  }
+
+  .fade-up {
+    @apply motion-safe:animate-[fadeUp_0.8s_ease-out_forwards];
+  }
+
+  .scale-in {
+    @apply motion-safe:animate-[scaleIn_0.6s_ease-out_forwards];
   }
 }
