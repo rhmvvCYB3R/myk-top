@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from './components/Navbar';
-
+import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
@@ -23,25 +23,19 @@ export default function HomePage() {
           </p>
 
           <div className="space-x-2 sm:space-x-4 flex flex-wrap justify-center scale-in motion-safe:delay-[0.6s]">
-            <a
-              href="/menu"
-              className="bg-red-600 hover:bg-red-700 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base"
-            >
-              Menu
-            </a>
-            <a
-              href="/booking"
-              className="bg-yellow-500 hover:bg-yellow-600 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base"
-            >
+            <Link href="/menu" className="bg-red-600 hover:bg-red-700 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base">
+              menu
+            </Link>
+
+            <Link href="/booking" className="bg-yellow-500 hover:bg-yellow-600 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base">
               Rezerwacja stolika
-            </a>
-            <a
-              href="/order"
-              className="bg-green-600 hover:bg-green-700 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base"
-            >
+            </Link>
+
+            <Link href="/order" className="bg-green-600 hover:bg-green-700 px-5 py-2.5 rounded-xl font-semibold shadow-lg transition transform hover:scale-105 text-sm sm:text-base">
               Zamów
-            </a>
+            </Link>
           </div>
+
         </div>
       </section>
 
