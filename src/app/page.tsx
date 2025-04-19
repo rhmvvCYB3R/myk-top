@@ -67,6 +67,11 @@ export default function HomePage() {
               icon: '🎵',
               text: 'Ciesz się muzyką na żywo i niepowtarzalną atmosferą każdego wieczoru.',
             },
+            {
+              title: 'Strona restauracji została stworzona przez Maksim, Yusif, Kirill',
+              icon: '👨‍💻',
+              text: 'Zespół programistów, którzy dbają o każdy detal.',
+            }
           ].map((item, idx) => (
             <div
               key={idx}
