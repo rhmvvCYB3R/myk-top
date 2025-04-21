@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { name: "Menu 😊", href: "/" },
+    { name: "Menu 😊", href: "/menu" },
     { name: "Koszyk 🛒", href: "/about" },
     { name: "Zamów 🍽️", href: "/about" },
     { name: "Opinie 💬", href: "/news" },

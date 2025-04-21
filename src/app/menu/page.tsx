@@ -1,18 +1,10 @@
 'use client';
 import { useState } from "react";
-import Navbar from '../components/Navbar';
+import Navbar from "../../components/Navbar";
 
 const categories = [
-  "Wszystko",
-  "Pizza",
-  "Sałatki",
-  "Napoje",
-  "Desery",
-  "Zupy",
-  "Kebab",
-  "Burgery",
-  "Makarony",
-  "Przystawki",
+  "Wszystko", "Pizza", "Sałatki", "Napoje", "Desery", "Zupy",
+  "Kebab", "Burgery", "Makarony", "Przystawki",
 ];
 
 const items = [
@@ -107,60 +99,65 @@ export default function MenuPage() {
       : items.filter((item) => item.category === selectedCategory);
 
   return (
-
-    <div className="min-h-screen bg-white bg-opacity-60 backdrop-blur-xl px-4 py-1">
+    <>
       <Navbar />
-      
-      <div className="max-w-6xl mx-auto py-20">
-        <h1 className="text-4xl font-bold text-center text-red-600 mb-10">
-          Menu Restauracji
-        </h1>
 
-        {/* Kategorie */}
-        <div className="flex justify-center gap-3 flex-wrap mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                selectedCategory === cat
-                  ? "bg-red-600 text-white shadow-lg"
-                  : "bg-white text-red-600 border border-red-200 hover:bg-red-100"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      <div className="min-h-screen bg-white bg-opacity-60 backdrop-blur-xl px-2 sm:px-4 py-4">
+        <div className="max-w-6xl mx-auto pt-20 sm:pt-24">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center text-red-600 mb-8 sm:mb-10">
+            Menu Restauracji
+          </h1>
 
-        {/* Lista dań */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition-shadow"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-48 object-cover rounded-xl mb-4"
-              />
-              <h3 className="text-xl font-semibold text-slate-800">
-                {item.name}
-              </h3>
-              <p className="text-slate-600 text-sm mb-2">{item.description}</p>
-              <div className="flex justify-between items-center mt-2">
-                <span className="text-lg font-bold text-red-600">
-                  {item.price} zł
-                </span>
-                <button className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-md text-sm">
-                  Dodaj 🛒
+          {/* Kategorie */}
+          <div className="overflow-x-auto scrollbar-hide mb-8 sm:mb-10">
+            <div className="flex gap-2 sm:gap-3 w-max px-2 sm:px-0">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    selectedCategory === cat
+                      ? "bg-red-600 text-white shadow-lg"
+                      : "bg-white text-red-600 border border-red-200 hover:bg-red-100"
+                  }`}
+                >
+                  {cat}
                 </button>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Lista dań */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-1 sm:px-0">
+            {filteredItems.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-md p-4 sm:p-5 hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-40 sm:h-48 object-cover rounded-xl mb-3 sm:mb-4"
+                />
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-800">
+                  {item.name}
+                </h3>
+                <p className="text-slate-600 text-sm sm:text-base mb-1 sm:mb-2">
+                  {item.description}
+                </p>
+                <div className="flex justify-between items-center mt-2">
+                  <span className="text-base sm:text-lg font-bold text-red-600">
+                    {item.price} zł
+                  </span>
+                  <button className="bg-red-600 hover:bg-red-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm">
+                    Dodaj 🛒
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
