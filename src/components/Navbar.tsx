@@ -17,7 +17,7 @@ export default function Navbar() {
     { name: "Zamów 🍽️", href: "/about" },
     { name: "Opinie 💬", href: "/news" },
     { name: "Nasze restauracje 🍴", href: "/contact" },
-    { name: "Rezerwacja stolika 📅", href: "/news" },
+    { name: "Rezerwacja stolika 📅", href: "/reservation" },
   ];
 
   return (
